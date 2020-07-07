@@ -17,6 +17,12 @@
 	<!-- 开启组件扫描 -->
 	<context:component-scan base-package="com.neuedu"/>
 	
-
+	<!-- 配置拦截器 -->
+	<mvc:interceptors>
+		<mvc:interceptor>
+			<mvc:mapping path="/**"/>
+			<bean class="com.neuedu.util.LoginCheck"/>
+		</mvc:interceptor>
+	</mvc:interceptors>
 
 </beans>
