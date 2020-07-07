@@ -90,4 +90,14 @@
       delmark = #{delmark,jdbcType=INTEGER}
     where menuid = #{menuid,jdbcType=INTEGER}
   </update>
+  
+  <select id="findMenuByUname" parameterType="String" resultType="com.neuedu.pojo.Menu">
+  		select  m.*
+		from user u , menu m, user_role ur, role_menu rm
+		where  rm.delmark = 0
+		and u.userid = ur.userid
+		and ur.roleid = rm.roleid
+		and rm.menuid = m.menuid
+		and u.username= #{uname}
+  </select>
 </mapper>

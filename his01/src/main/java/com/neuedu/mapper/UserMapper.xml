@@ -150,4 +150,8 @@
       delMark = #{delmark,jdbcType=INTEGER}
     where userid = #{userid,jdbcType=INTEGER}
   </update>
+  
+  <select id="findUserByUnamePwd" parameterType="com.neuedu.pojo.User" resultType="com.neuedu.pojo.User">
+  	select * from user where delmark=0 and  username = #{username} and password = #{password}
+  </select>
 </mapper>

@@ -14,17 +14,17 @@
 	<div style="color:red;">${msg }</div>
 
  <h3>东软云his系统用户登录</h3>
-<form class="form-horizontal" action="" method="post">
+<form class="form-horizontal" action="login.do" method="post">
   <div class="form-group">
     <label for="inputEmail3" class="col-sm-3 control-label">用户名</label>
     <div class="col-sm-9">
-      <input type="text" class="form-control" id="inputEmail3" placeholder="请输入用户名">
+      <input type="text" class="form-control" name="username" id="inputEmail3" placeholder="请输入用户名">
     </div>
   </div>
   <div class="form-group">
     <label for="inputPassword3" class="col-sm-3 control-label">密码</label>
     <div class="col-sm-9">
-      <input type="password" class="form-control" id="inputPassword3" placeholder="请输入密码">
+      <input type="password" class="form-control" name="password" id="inputPassword3" placeholder="请输入密码">
     </div>
   </div>
   <div class="form-group">
