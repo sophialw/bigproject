@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.neuedu.mapper.UserRoleMapper" >
+  <resultMap id="BaseResultMap" type="com.neuedu.pojo.UserRole" >
+    <id column="userroleid" property="userroleid" jdbcType="INTEGER" />
+    <result column="userid" property="userid" jdbcType="INTEGER" />
+    <result column="roleid" property="roleid" jdbcType="INTEGER" />
+    <result column="delmark" property="delmark" jdbcType="INTEGER" />
+  </resultMap>
+  <sql id="Base_Column_List" >
+    userroleid, userid, roleid, delmark
+  </sql>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
+    select 
+    <include refid="Base_Column_List" />
+    from user_role
+    where userroleid = #{userroleid,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
+    delete from user_role
+    where userroleid = #{userroleid,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.neuedu.pojo.UserRole" >
+    insert into user_role (userroleid, userid, roleid, 
+      delmark)
+    values (#{userroleid,jdbcType=INTEGER}, #{userid,jdbcType=INTEGER}, #{roleid,jdbcType=INTEGER}, 
+      #{delmark,jdbcType=INTEGER})
+  </insert>
+  <insert id="insertSelective" parameterType="com.neuedu.pojo.UserRole" >
+    insert into user_role
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="userroleid != null" >
+        userroleid,
+      </if>
+      <if test="userid != null" >
+        userid,
+      </if>
+      <if test="roleid != null" >
+        roleid,
+      </if>
+      <if test="delmark != null" >
+        delmark,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="userroleid != null" >
+        #{userroleid,jdbcType=INTEGER},
+      </if>
+      <if test="userid != null" >
+        #{userid,jdbcType=INTEGER},
+      </if>
+      <if test="roleid != null" >
+        #{roleid,jdbcType=INTEGER},
+      </if>
+      <if test="delmark != null" >
+        #{delmark,jdbcType=INTEGER},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.neuedu.pojo.UserRole" >
+    update user_role
+    <set >
+      <if test="userid != null" >
+        userid = #{userid,jdbcType=INTEGER},
+      </if>
+      <if test="roleid != null" >
+        roleid = #{roleid,jdbcType=INTEGER},
+      </if>
+      <if test="delmark != null" >
+        delmark = #{delmark,jdbcType=INTEGER},
+      </if>
+    </set>
+    where userroleid = #{userroleid,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.neuedu.pojo.UserRole" >
+    update user_role
+    set userid = #{userid,jdbcType=INTEGER},
+      roleid = #{roleid,jdbcType=INTEGER},
+      delmark = #{delmark,jdbcType=INTEGER}
+    where userroleid = #{userroleid,jdbcType=INTEGER}
+  </update>
+</mapper>
