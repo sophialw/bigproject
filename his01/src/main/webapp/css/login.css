@@ -1,0 +1,16 @@
+@charset "UTF-8";
+#logindiv{
+	
+	margin:0 auto;
+	width:400px;
+	height:300px;
+	border:1px solid gray;
+	padding:20px;
+	margin-top:50px;
+}
+
+#logindiv h3{
+	
+	margin-left:50px;
+	margin-bottom:20px;
+}
