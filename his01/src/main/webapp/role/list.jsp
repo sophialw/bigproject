@@ -7,7 +7,9 @@
 <meta charset="UTF-8">
 <title>Insert title here</title>
 <link rel="stylesheet" href="../bootstrap/css/bootstrap.min.css">
-
+<script type="text/javascript" src="../js/jquery-3.5.1.min.js"></script>
+<script type="text/javascript" src="../bootstrap/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="js/list.js"></script>
 </head>
 <body>
 
@@ -23,7 +25,7 @@
 			<button type="button" class="btn btn-success">新增</button>
 		</form>
 
-        <table class="table table-bordered table-striped">
+        <table class="table table-bordered table-striped" style="width:80%" >
         	<thead>
         		<tr>
         			<th><input type="checkbox" id="qx" ></th>
@@ -51,6 +53,10 @@
         				<a href="">修改</a>
         				&nbsp;&nbsp;&nbsp;
         				<a href="">删除</a>
+        				&nbsp;&nbsp;&nbsp;
+        				<a href="javascript:fshowMenuView(${r.roleid },'${r.rolename }')">查看权限</a>
+        				&nbsp;&nbsp;&nbsp;
+        				<a href="">添加权限</a>
         				</td>
         			</tr>
         			
@@ -70,7 +76,36 @@
 	</div>
 
 
-
+    <!-- 权限管理模态框 begin -->
+    <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+	  <div class="modal-dialog" role="document">
+	    <div class="modal-content">
+	      <div class="modal-header">
+	        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+	        <h4 class="modal-title" id="myModalLabel">权限管理</h4>
+	      </div>
+	      <div class="modal-body">
+	        <h5>当前角色名称：<span id="modal_rolename" style="color:blue;"></span> </h5>
+	        <table class="table table-bordered">
+	        	<thead>
+	        		<tr>
+	        			<th>权限名称</th>
+	        			<th>请求路径</th>
+	        			<th>操作</th>
+	        		</tr>
+	        	</thead>
+	        	<tbody id="menu_data">
+	        		
+	        	</tbody>
+	        </table>
+	      </div>
+	      
+	    </div>
+	  </div>
+	</div>
+    
+    
+    <!-- 权限管理模态框 end-->
 
 </body>
 </html>

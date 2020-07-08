@@ -22,4 +22,15 @@ public class MenuServiceImpl implements MenuService {
 		return menuMapper.findMenuByUname(uname);
 	}
 
+	@Override
+	public List<Menu> findMenus(Menu menu) throws Exception {
+		
+		return menuMapper.findMenus(menu);
+	}
+
+	@Override
+	public int findCount(Menu menu) throws Exception {
+		return menuMapper.findCount(menu);
+	}
+
 }

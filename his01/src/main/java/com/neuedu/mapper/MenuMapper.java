@@ -20,4 +20,9 @@ public interface MenuMapper {
     
     List<Menu> findMenuByUname(String uname);
     
+    List<Menu> findMenus(Menu menu);
+    
+    int findCount(Menu menu);
+    
+    
 }

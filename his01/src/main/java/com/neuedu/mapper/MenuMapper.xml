@@ -100,4 +100,37 @@
 		and rm.menuid = m.menuid
 		and u.username= #{uname}
   </select>
+  
+  <select id="findMenus" parameterType="com.neuedu.pojo.Menu" resultType="com.neuedu.pojo.Menu">
+  		select * from menu
+  		<where>
+  			<if test="mname != null">
+  				and mname= #{mname}
+  			</if>
+  			<if test="url != null">
+  				and url= #{url}
+  			</if>
+  				<if test="icon != null">
+  				and icon= #{icon}
+  			</if>
+  		</where>
+  		
+  		limit #{beginIndex},#{pageSize}
+  </select>
+  
+  <select id="findCount" parameterType="com.neuedu.pojo.Menu" resultType="int">
+ 	 select count(*) from menu
+  		<where>
+  			<if test="mname != null">
+  				and mname= #{mname}
+  			</if>
+  			<if test="url != null">
+  				and url= #{url}
+  			</if>
+  				<if test="icon != null">
+  				and icon= #{icon}
+  			</if>
+  		</where>
+  
+  </select>
 </mapper>

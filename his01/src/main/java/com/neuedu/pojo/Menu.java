@@ -10,8 +10,31 @@ public class Menu {
     private String url;
 
     private Integer delmark;
+    
+    private Integer beginIndex;
+    
+    private Integer pageSize;
+    
+    
+    
 
-    public Integer getMenuid() {
+    public Integer getBeginIndex() {
+		return beginIndex;
+	}
+
+	public void setBeginIndex(Integer beginIndex) {
+		this.beginIndex = beginIndex;
+	}
+
+	public Integer getPageSize() {
+		return pageSize;
+	}
+
+	public void setPageSize(Integer pageSize) {
+		this.pageSize = pageSize;
+	}
+
+	public Integer getMenuid() {
         return menuid;
     }
 
