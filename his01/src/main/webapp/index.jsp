@@ -12,11 +12,8 @@
 </head>
 <body>
 <%@ include file="header.jsp" %>
-<ul>
-	<c:forEach items="${menus }" var="m">
-		<li><a href="${m.url }"><i class="${m.icon }"></i> &nbsp;${m.mname }</a>
-	</c:forEach>
+<%@ include file="left.jsp" %>
+<iframe  class="main" name="main" src="welcome.jsp" frameborder="no" width="100%" height="100%"></iframe>
 
-</ul>
 </body>
 </html>
