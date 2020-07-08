@@ -1,13 +1,37 @@
 package com.neuedu.pojo;
 
 public class Role {
+	
     private Integer roleid;
 
     private String rolename;
 
     private Integer delmark;
 
-    public Integer getRoleid() {
+    
+    private Integer beginIndex;
+    
+    private Integer pageSize;
+    
+    
+    
+    public Integer getBeginIndex() {
+		return beginIndex;
+	}
+
+	public void setBeginIndex(Integer beginIndex) {
+		this.beginIndex = beginIndex;
+	}
+
+	public Integer getPageSize() {
+		return pageSize;
+	}
+
+	public void setPageSize(Integer pageSize) {
+		this.pageSize = pageSize;
+	}
+
+	public Integer getRoleid() {
         return roleid;
     }
 

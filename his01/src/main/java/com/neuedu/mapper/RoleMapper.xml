@@ -68,4 +68,26 @@
       delmark = #{delmark,jdbcType=INTEGER}
     where roleid = #{roleid,jdbcType=INTEGER}
   </update>
+  
+  <select id="findRoles"  parameterType="com.neuedu.pojo.Role" resultType="com.neuedu.pojo.Role">
+  		select * from trole 
+  		<where>
+  				delmark = 0
+  			<if test="rolename != null">
+  				and rolename = #{rolename}
+  			</if>
+  			 limit #{beginIndex},#{pageSize}
+  		</where>
+  </select>
+  
+   <select id="findCountRoles"  parameterType="com.neuedu.pojo.Role" resultType="int">
+  		select count(*) from trole 
+  		<where>
+  				delmark = 0
+  			<if test="rolename != null">
+  				and rolename = #{rolename}
+  			</if>
+  			 
+  		</where>
+  </select>  
 </mapper>

@@ -30,4 +30,14 @@ public class UserController {
 		}
 		return mv;
 	}
+	
+	@RequestMapping("logout.do")
+	public ModelAndView logout(HttpServletRequest request) throws Exception {
+		ModelAndView mv = new ModelAndView();
+		HttpSession session = request.getSession();
+		session.invalidate();
+		mv.setViewName("login.jsp");
+		return mv;
+	}
+	
 }
