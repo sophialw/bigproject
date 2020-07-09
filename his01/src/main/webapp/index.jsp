@@ -6,8 +6,8 @@
 <head>
 <meta charset="UTF-8">
 <title>云his系统-后台主页</title>
-<link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
-<link rel="stylesheet" href="css/common.css">
+<link rel="stylesheet" href="${pageContext.request.contextPath}/bootstrap/css/bootstrap.min.css">
+<link rel="stylesheet" href="${pageContext.request.contextPath}/css/common.css">
 
 </head>
 <body>

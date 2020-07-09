@@ -133,4 +133,11 @@
   		</where>
   
   </select>
+  
+  <select id="findMenuByRoleid" parameterType="int" resultType="com.neuedu.pojo.Menu">
+	select m.*
+	from menu m, role_menu rm
+	where m.menuid = rm.menuid
+	and rm.roleid = #{roleid}
+  </select>
 </mapper>

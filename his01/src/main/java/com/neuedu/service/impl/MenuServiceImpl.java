@@ -33,4 +33,13 @@ public class MenuServiceImpl implements MenuService {
 		return menuMapper.findCount(menu);
 	}
 
+	/*
+     * 根据角色的id查询该角色下的所有的菜单
+     */
+	@Override
+	public List<Menu> findMenuByRoleid(int roleid) {
+		
+		return menuMapper.findMenuByRoleid(roleid);
+	}
+
 }

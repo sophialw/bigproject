@@ -5,6 +5,7 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.neuedu.pojo.Menu;
@@ -45,5 +46,17 @@ public class MenuController {
 		
 		mv.setViewName("list.jsp");
 		return mv;
+	}
+	
+	/*
+     * 根据角色的id查询该角色下的所有的菜单,返回json数据
+     */
+	@RequestMapping("/findMenuByRoleid.do")
+	public @ResponseBody List<Menu> findMenuByroleid(Integer roleid){
+		if(roleid != null) {
+			return menuService.findMenuByRoleid(roleid);
+		} else {
+			return null;
+		}
 	}
 }

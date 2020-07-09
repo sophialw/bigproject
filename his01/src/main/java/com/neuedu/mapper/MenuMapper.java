@@ -24,5 +24,8 @@ public interface MenuMapper {
     
     int findCount(Menu menu);
     
-    
+    /*
+     * 根据角色的id查询该角色下的所有的菜单
+     */
+    List<Menu> findMenuByRoleid(int roleid);
 }

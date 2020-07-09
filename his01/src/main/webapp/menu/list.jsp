@@ -6,14 +6,14 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
-<link rel="stylesheet" href="../bootstrap/css/bootstrap.min.css">
-<link rel="stylesheet" href="../css/common.css">
+<link rel="stylesheet" href="${pageContext.request.contextPath}/bootstrap/css/bootstrap.min.css">
+<link rel="stylesheet" href="${pageContext.request.contextPath}/css/common.css">
 </head>
 <body>
 
 	<div class="dataContainer">
 		<h1 class="dataContainer title">权限信息</h1>
-		<form class="form-inline" action="list.do" method="post">
+		<form class="form-inline" action="${pageContext.request.contextPath}/menu/list.do" method="post">
 			<div class="form-group">
 				 <input type="text"
 					class="form-control" id="rolename" name="mname" placeholder="请输入权限角色名称">

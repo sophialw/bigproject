@@ -36,7 +36,7 @@ public class LoginCheck implements HandlerInterceptor {
 				return true;
 			} else {
 				request.setAttribute("msg", "请您先登录！");
-				request.getRequestDispatcher("login.jsp").forward(request, response);
+				request.getRequestDispatcher("/login.jsp").forward(request, response);
 				return false;
 			}
 		}
