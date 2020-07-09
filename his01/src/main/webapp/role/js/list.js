@@ -92,7 +92,7 @@ function fdeleteRoleMenu(menuid, roleid){
  * @returns
  */
 function fNoUsedMenuView(roleid, rolename){
-	alert("111")
+
 	$.ajax({
 		url:"/his01/menu/findNoUsedMenu.do",
 		type:"post",
@@ -107,10 +107,7 @@ function fNoUsedMenuView(roleid, rolename){
 				var td2 = $("<td>"+m.url+"</td>");
 				id="btn"+i;
 				var td3 = $("<td></td>");
-				var btn = $("<button  type='button'  class='btn btn-info' onclick='fsetRoleMenu("+m.menuid+","+roleid+","+id+")'>设置</button>")
-//				var btn = $("<button type='button' class='btn btn-info' >设置</button>");
-				btn.attr("id",id);
-//				btn.attr("onclick",fsetRoleMenu(m.menuid,roleid,id));
+				var btn = $("<button  type='button' id="+id+"  class='btn btn-info' onclick='fsetRoleMenu("+m.menuid+","+roleid+","+i+")'>设置</button>")
 				td3.append(btn);
 				tr.append(td1);
 				tr.append(td2);
@@ -135,12 +132,11 @@ function fNoUsedMenuView(roleid, rolename){
  * @param roleid
  * @returns
  */
-function fsetRoleMenu(menuid, roleid,btnid){
-	alert("set"+btnid)
-	/*alert(menuid);
-	alert(roleid);
-	alert(btnid);*/
-	/*$.ajax({
+function fsetRoleMenu(menuid, roleid,i){
+	//一旦点击了设置按钮， 则当前按钮不可用
+	$("#btn"+i).attr("disabled","disabled");
+
+	$.ajax({
 		url:"/his01/menu/addRoleMenu.do",
 		type:"post",
 		data:{"menuid":menuid,"roleid":roleid},
@@ -154,5 +150,5 @@ function fsetRoleMenu(menuid, roleid,btnid){
 		error:function (){
 			alert("服务端出错！")
 		}
-	})*/
+	})
 }
