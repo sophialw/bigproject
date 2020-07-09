@@ -71,4 +71,25 @@ public class MenuController {
 		}
 		
 	}
+	//查询指定角色没有使用的菜单列表
+	@RequestMapping("/findNoUsedMenu.do")
+	public @ResponseBody List<Menu> findMenus(Integer roleid){
+		if(roleid != null)
+			return menuService.findRoleMenuByRoleid(roleid);
+		else {
+			return null;
+		}
+	}
+	
+	
+	@RequestMapping("/addRoleMenu.do")
+	public @ResponseBody String  addRoleMenu(RoleMenu roleMenu) {
+		int i = menuService.addRoleMenu(roleMenu);
+		if(i > 0) {
+			return "ok";
+		} else {
+			return "fail";
+		}
+		
+	}
 }

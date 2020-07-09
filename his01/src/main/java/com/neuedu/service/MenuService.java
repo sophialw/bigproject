@@ -23,4 +23,16 @@ public interface MenuService {
      * 根据角色id和权限id删除rolemenu中的数据
      * */
     int deleteByRoleidMenuid(RoleMenu roleMenu);
+    
+    
+    /*
+     * 查询当前角色没有使用的菜单列表
+     */
+    List<Menu> findRoleMenuByRoleid(int roleid);
+    
+	/*
+	 * 设置权限
+	 */
+    
+    int addRoleMenu(RoleMenu roleMenu);
 }

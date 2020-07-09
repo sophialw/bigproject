@@ -141,4 +141,11 @@
 	and m.menuid = rm.menuid
 	and rm.roleid = #{roleid}
   </select>
+  
+  <select id="findRoleMenuByRoleid" parameterType="int" resultType="com.neuedu.pojo.Menu">
+	select m.*
+	from menu m
+	where m.menuid not in (select menuid from role_menu where roleid = #{roleid})
+  
+  </select>
 </mapper>

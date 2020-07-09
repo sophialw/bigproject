@@ -72,8 +72,7 @@ function fdeleteRoleMenu(menuid, roleid){
 				if(data =="ok"){
 					alert("权限删除成功！");
 					window.location.reload();
-					
-//					fshowMenuView(roleid,rolename)
+
 					
 				}
 			},
@@ -84,4 +83,65 @@ function fdeleteRoleMenu(menuid, roleid){
 		})
 		
 	}
+}
+
+/*
+ * 查看当前角色没有使用的权限列表
+ * @param roleid
+ * @param rolename
+ * @returns
+ */
+function fNoUsedMenuView(roleid, rolename){
+	$.ajax({
+		url:"/his01/menu/findNoUsedMenu.do",
+		type:"post",
+		data:{"roleid":roleid},
+		success:function(menus){
+			//清除原有数据
+			$("#add_menu_data").children().remove();
+			for(var i=0;i<menus.length;i++){
+				var m = menus[i];
+				var tr = $("<tr></tr>");
+				var td1 = $("<td>"+m.mname+"</td>");
+				var td2 = $("<td>"+m.url+"</td>");
+				var td3 = $("<td><button  type='button' class='btn btn-info' onclick='fsetRoleMenu("+m.menuid+","+roleid+")'>设置</button></td>");
+				tr.append(td1);
+				tr.append(td2);
+				tr.append(td3);
+				$("#add_menu_data").append(tr);
+			}
+			//将弹窗显示	
+			$("#addRole_modal_rolename").text(rolename);
+			
+
+			$('#addRoleMenuModal').modal('show');
+		},
+		error:function (){
+			alert("服务端出错！")
+		}
+	})
+}
+
+/**
+ * 设置权限
+ * @param menuid
+ * @param roleid
+ * @returns
+ */
+function fsetRoleMenu(menuid, roleid){
+	$.ajax({
+		url:"/his01/menu/addRoleMenu.do",
+		type:"post",
+		data:{"menuid":menuid,"roleid":roleid},
+		success:function(data){
+			if(data == "ok"){
+				$(this).attr("disabled","disabled");
+				alert("设置成功！");
+				
+			}
+		},
+		error:function (){
+			alert("服务端出错！")
+		}
+	})
 }

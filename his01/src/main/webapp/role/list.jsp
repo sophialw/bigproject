@@ -54,9 +54,9 @@
         				&nbsp;&nbsp;&nbsp;
         				<a href="">删除</a>
         				&nbsp;&nbsp;&nbsp;
-        				<a href="javascript:fshowMenuView(${r.roleid },'${r.rolename }')">查看权限</a>
+        				<a href="javascript:fshowMenuView(${r.roleid},'${r.rolename }')">查看权限</a>
         				&nbsp;&nbsp;&nbsp;
-        				<a href="">添加权限</a>
+        				<a href="javascript:fNoUsedMenuView(${r.roleid},'${r.rolename }')">添加权限</a>
         				</td>
         			</tr>
         			
@@ -76,7 +76,7 @@
 	</div>
 
 
-    <!-- 权限管理模态框 begin -->
+    <!-- 查看权限管理模态框 begin -->
     <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
 	  <div class="modal-dialog" role="document">
 	    <div class="modal-content">
@@ -106,7 +106,40 @@
 	</div>
     
     
-    <!-- 权限管理模态框 end-->
+    <!-- 查看权限管理模态框 end-->
+    
+    
+     <!-- 添加权限模态框 begin -->
+    <div class="modal fade" id="addRoleMenuModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+	  <div class="modal-dialog" role="document">
+	    <div class="modal-content">
+	      <div class="modal-header">
+	        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+	        <h4 class="modal-title" id="myModalLabel">添加权限</h4>
+	      </div>
+	      <div class="modal-body">
+	        <h5>当前角色名称：<span id="addRole_modal_rolename" style="color:blue;"></span>
+	         </h5>
+	        <table class="table table-bordered">
+	        	<thead>
+	        		<tr>
+	        			<th>权限名称</th>
+	        			<th>请求路径</th>
+	        			<th>操作</th>
+	        		</tr>
+	        	</thead>
+	        	<tbody id="add_menu_data">
+	        		
+	        	</tbody>
+	        </table>
+	      </div>
+	      
+	    </div>
+	  </div>
+	</div>
+    
+    
+    <!-- 添加权限模态框 end-->
 
 </body>
 </html>

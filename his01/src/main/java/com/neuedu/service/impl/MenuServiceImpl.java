@@ -52,4 +52,15 @@ public class MenuServiceImpl implements MenuService {
 		return roleMenuMapper.deleteByRoleidMenuid(roleMenu);
 	}
 
+	@Override
+	public List<Menu> findRoleMenuByRoleid(int roleid) {
+		
+		return menuMapper.findRoleMenuByRoleid(roleid);
+	}
+
+	@Override
+	public int addRoleMenu(RoleMenu roleMenu) {
+		return roleMenuMapper.insert(roleMenu);
+	}
+
 }

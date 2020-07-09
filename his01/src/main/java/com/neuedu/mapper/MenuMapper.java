@@ -28,4 +28,9 @@ public interface MenuMapper {
      * 根据角色的id查询该角色下的所有的菜单
      */
     List<Menu> findMenuByRoleid(int roleid);
+    
+    /*
+     * 查询当前角色没有使用的菜单列表
+     */
+    List<Menu> findRoleMenuByRoleid(int roleid);
 }
