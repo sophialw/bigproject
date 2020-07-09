@@ -10,6 +10,7 @@ import org.springframework.web.servlet.ModelAndView;
 
 import com.neuedu.pojo.Menu;
 import com.neuedu.pojo.Role;
+import com.neuedu.pojo.RoleMenu;
 import com.neuedu.service.MenuService;
 import com.neuedu.util.PageBean;
 
@@ -58,5 +59,16 @@ public class MenuController {
 		} else {
 			return null;
 		}
+	}
+	
+	@RequestMapping("/deleteRoleMenu.do")
+	public @ResponseBody String  deleteRoleMenu(RoleMenu roleMenu) {
+		int i = menuService.deleteByRoleidMenuid(roleMenu);
+		if(i > 0) {
+			return "ok";
+		} else {
+			return "fail";
+		}
+		
 	}
 }

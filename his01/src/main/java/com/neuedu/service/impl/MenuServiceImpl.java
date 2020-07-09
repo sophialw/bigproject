@@ -7,7 +7,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.neuedu.mapper.MenuMapper;
+import com.neuedu.mapper.RoleMenuMapper;
 import com.neuedu.pojo.Menu;
+import com.neuedu.pojo.RoleMenu;
 import com.neuedu.service.MenuService;
 
 @Service("menuService")
@@ -15,6 +17,9 @@ public class MenuServiceImpl implements MenuService {
 
 	@Autowired
 	private MenuMapper menuMapper;
+	
+	@Autowired
+	private RoleMenuMapper roleMenuMapper;
 	
 	@Override
 	public List<Menu> findMenuByUname(String uname) throws Exception {
@@ -40,6 +45,11 @@ public class MenuServiceImpl implements MenuService {
 	public List<Menu> findMenuByRoleid(int roleid) {
 		
 		return menuMapper.findMenuByRoleid(roleid);
+	}
+
+	@Override
+	public int deleteByRoleidMenuid(RoleMenu roleMenu) {
+		return roleMenuMapper.deleteByRoleidMenuid(roleMenu);
 	}
 
 }

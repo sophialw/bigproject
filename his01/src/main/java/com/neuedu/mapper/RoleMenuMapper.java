@@ -14,4 +14,10 @@ public interface RoleMenuMapper {
     int updateByPrimaryKeySelective(RoleMenu record);
 
     int updateByPrimaryKey(RoleMenu record);
+    
+    /*
+     * 根据角色id和权限id删除rolemenu中的数据
+     * */
+    
+    int deleteByRoleidMenuid(RoleMenu roleMenu);
 }

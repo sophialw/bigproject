@@ -79,4 +79,13 @@
       delmark = #{delmark,jdbcType=INTEGER}
     where rmid = #{rmid,jdbcType=INTEGER}
   </update>
+  
+  
+  <update id="deleteByRoleidMenuid" parameterType="com.neuedu.pojo.RoleMenu">
+  	update role_menu
+  	set delmark = 1
+  	where roleid = #{roleid}
+  	and menuid=#{menuid}
+  
+  </update>
 </mapper>

@@ -85,7 +85,8 @@
 	        <h4 class="modal-title" id="myModalLabel">权限管理</h4>
 	      </div>
 	      <div class="modal-body">
-	        <h5>当前角色名称：<span id="modal_rolename" style="color:blue;"></span> </h5>
+	        <h5>当前角色名称：<span id="modal_rolename" style="color:blue;"></span>
+	         </h5>
 	        <table class="table table-bordered">
 	        	<thead>
 	        		<tr>

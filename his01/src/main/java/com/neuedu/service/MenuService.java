@@ -3,6 +3,7 @@ package com.neuedu.service;
 import java.util.List;
 
 import com.neuedu.pojo.Menu;
+import com.neuedu.pojo.RoleMenu;
 
 public interface MenuService {
 
@@ -17,4 +18,9 @@ public interface MenuService {
      */
 	List<Menu> findMenuByRoleid(int roleid);
 	
+	
+	 /*
+     * 根据角色id和权限id删除rolemenu中的数据
+     * */
+    int deleteByRoleidMenuid(RoleMenu roleMenu);
 }
