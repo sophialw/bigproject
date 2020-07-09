@@ -22,10 +22,10 @@
     where menuid = #{menuid,jdbcType=INTEGER}
   </delete>
   <insert id="insert" parameterType="com.neuedu.pojo.Menu" >
-    insert into menu (menuid, mname, icon, 
-      url, delmark)
-    values (#{menuid,jdbcType=INTEGER}, #{mname,jdbcType=VARCHAR}, #{icon,jdbcType=VARCHAR}, 
-      #{url,jdbcType=VARCHAR}, #{delmark,jdbcType=INTEGER})
+    insert into menu ( mname, icon, 
+      url,showorder)
+    values ( #{mname,jdbcType=VARCHAR}, #{icon,jdbcType=VARCHAR}, 
+      #{url,jdbcType=VARCHAR}, #{showorder})
   </insert>
   <insert id="insertSelective" parameterType="com.neuedu.pojo.Menu" >
     insert into menu
@@ -99,6 +99,7 @@
 		and ur.roleid = rm.roleid
 		and rm.menuid = m.menuid
 		and u.username= #{uname}
+		order by showorder
   </select>
   
   <select id="findMenus" parameterType="com.neuedu.pojo.Menu" resultType="com.neuedu.pojo.Menu">

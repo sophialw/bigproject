@@ -9,6 +9,8 @@ public class Menu {
 
     private String url;
 
+    private Integer showorder;
+    
     private Integer delmark;
     
     private Integer beginIndex;
@@ -18,7 +20,15 @@ public class Menu {
     
     
 
-    public Integer getBeginIndex() {
+    public Integer getShoworder() {
+		return showorder;
+	}
+
+	public void setShoworder(Integer showorder) {
+		this.showorder = showorder;
+	}
+
+	public Integer getBeginIndex() {
 		return beginIndex;
 	}
 

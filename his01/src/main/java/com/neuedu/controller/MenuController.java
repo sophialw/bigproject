@@ -92,4 +92,14 @@ public class MenuController {
 		}
 		
 	}
+	
+	@RequestMapping("/addMenu.do")
+	public  @ResponseBody String addMenu(Menu menu) {
+		int i = menuService.addMenu(menu);
+		if(i > 0) {
+			return "ok";
+		} else {
+			return "fail";
+		}
+	}
 }

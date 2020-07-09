@@ -63,4 +63,9 @@ public class MenuServiceImpl implements MenuService {
 		return roleMenuMapper.insert(roleMenu);
 	}
 
+	@Override
+	public int addMenu(Menu menu) {
+		return menuMapper.insert(menu);
+	}
+
 }

@@ -35,4 +35,7 @@ public interface MenuService {
 	 */
     
     int addRoleMenu(RoleMenu roleMenu);
+    
+	/* 添加权限 */
+    int addMenu(Menu menu);
 }
