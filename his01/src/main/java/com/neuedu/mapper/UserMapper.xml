@@ -154,4 +154,49 @@
   <select id="findUserByUnamePwd" parameterType="com.neuedu.pojo.User" resultType="com.neuedu.pojo.User">
   	select * from user where delmark=0 and  username = #{username} and password = #{password}
   </select>
+  
+  
+  <select id="findUsers" parameterType="com.neuedu.pojo.User" resultType="com.neuedu.pojo.User">
+  	select username,realname,departmentid,
+	(select constantname from constantitem c where c.constrantitemid = u.usertype) yhlx,
+	(select deptname from department d where d.departmentid = u.departmentid) deptname,
+	(select constantname from constantitem c where c.constrantitemid = u.doctitleid) yszc,
+	u.isscheduling
+	from user u
+	<where>
+		u.delmark = 0
+		<if test="username != null">
+		and  username = #{username}
+		</if>
+		<if test="realname != null">
+		and  realname = #{realname}
+		</if>
+		<if test="departmentid != null">
+		and  departmentid = #{departmentid}
+		</if>
+		
+	</where>
+	   limit #{beginIndex},#{pageSize}
+  </select>
+  
+  
+  <select id="findCount" parameterType="com.neuedu.pojo.User" resultType="int">
+  	select count(*)
+	from user u
+	<where>
+		u.delmark = 0
+		<if test="username != null">
+		and  username = #{username}
+		</if>
+		<if test="realname != null">
+		and  realname = #{realname}
+		</if>
+		<if test="departmentid != null">
+		and  departmentid = #{departmentid}
+		</if>
+		
+	</where>
+	 
+  </select>
+  
 </mapper>

@@ -1,6 +1,7 @@
 package com.neuedu.pojo;
 
 public class User {
+	
     private Integer userid;
 
     private String username;
@@ -20,8 +21,61 @@ public class User {
     private Integer registlevelid;
 
     private Integer delmark;
+    
+    
+    private String yhlx;  //用户类型：门诊医生、医技医生
+    
+    private String yszc; //医生职称
+    
+    private String deptname; //科室名称
+    
+    private Integer beginIndex;
+    
+    private Integer pageSize;
+    
+    
 
-    public Integer getUserid() {
+    public Integer getBeginIndex() {
+		return beginIndex;
+	}
+
+	public void setBeginIndex(Integer beginIndex) {
+		this.beginIndex = beginIndex;
+	}
+
+	public Integer getPageSize() {
+		return pageSize;
+	}
+
+	public void setPageSize(Integer pageSize) {
+		this.pageSize = pageSize;
+	}
+
+	public String getYhlx() {
+		return yhlx;
+	}
+
+	public void setYhlx(String yhlx) {
+		this.yhlx = yhlx;
+	}
+
+	public String getYszc() {
+		return yszc;
+	}
+
+	public void setYszc(String yszc) {
+		this.yszc = yszc;
+	}
+
+	public String getDeptname() {
+		return deptname;
+	}
+
+	public void setDeptname(String deptname) {
+		this.deptname = deptname;
+	}
+
+	public Integer getUserid() {
         return userid;
     }
 
