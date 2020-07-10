@@ -103,4 +103,32 @@
       delMark = #{delmark,jdbcType=INTEGER}
     where departmentid = #{departmentid,jdbcType=INTEGER}
   </update>
+  
+  <select id="findDepts" parameterType="com.neuedu.pojo.Department" resultType="com.neuedu.pojo.Department">
+	 select  d.*,
+	(select constantname from constantitem i where i.constrantitemid = d.DeptCategoryID) ksfl,
+	(select constantname from constantitem i where i.constrantitemid = d.depttype) kslx
+	from department d
+	<where>
+		d.delmark = 0
+		<if test="deptname != null">
+			and deptname = #{deptname}
+		</if>
+		limit #{beginIndex},#{pageSize}
+	</where>
+  
+  </select>
+  
+   <select id="findCount" parameterType="com.neuedu.pojo.Department" resultType="int">
+	 select  count(*)
+	 from department d
+	<where>
+		d.delmark = 0
+		<if test="deptname != null">
+			and deptname = #{deptname}
+		</if>
+		
+	</where>
+  
+  </select>
 </mapper>

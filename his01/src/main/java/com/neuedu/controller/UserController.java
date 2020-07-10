@@ -40,4 +40,13 @@ public class UserController {
 		return mv;
 	}
 	
+	@RequestMapping("/user/list.do")
+	public ModelAndView list() throws Exception {
+		ModelAndView mv = new ModelAndView();
+		mv.setViewName("list.jsp");
+		return mv;
+	}
+	
+	
+	
 }

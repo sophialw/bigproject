@@ -13,7 +13,49 @@ public class Department {
 
     private Integer delmark;
 
-    public Integer getDepartmentid() {
+    private String ksfl; //科室分类  内科，外科。。。
+    
+    private String kslx; //科室类型： 临床科室、行政、财务。。
+    
+    private Integer beginIndex;
+    
+    private Integer pageSize;
+    
+    
+    
+    public String getKsfl() {
+		return ksfl;
+	}
+
+	public void setKsfl(String ksfl) {
+		this.ksfl = ksfl;
+	}
+
+	public String getKslx() {
+		return kslx;
+	}
+
+	public void setKslx(String kslx) {
+		this.kslx = kslx;
+	}
+
+	public Integer getBeginIndex() {
+		return beginIndex;
+	}
+
+	public void setBeginIndex(Integer beginIndex) {
+		this.beginIndex = beginIndex;
+	}
+
+	public Integer getPageSize() {
+		return pageSize;
+	}
+
+	public void setPageSize(Integer pageSize) {
+		this.pageSize = pageSize;
+	}
+
+	public Integer getDepartmentid() {
         return departmentid;
     }
 
