@@ -124,7 +124,7 @@
 	 from department d
 	<where>
 		d.delmark = 0
-		<if test="deptname != null">
+		<if test="deptname != null and deptname != ''">
 			and deptname = #{deptname}
 		</if>
 		
