@@ -21,4 +21,7 @@ public interface RoleMapper {
     List<Role>  findRoles(Role role);
     
     int findCountRoles(Role role);
+    
+    
+    List<Role>  findAllRoles();
 }

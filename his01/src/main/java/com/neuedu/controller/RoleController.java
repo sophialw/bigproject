@@ -5,9 +5,11 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.neuedu.pojo.Role;
+import com.neuedu.pojo.UserRole;
 import com.neuedu.service.RoleService;
 import com.neuedu.util.PageBean;
 
@@ -39,5 +41,20 @@ public class RoleController {
 		mv.addObject("page", pageBean);
 		mv.setViewName("list.jsp");
 		return mv;
+	}
+	
+	@RequestMapping("findAllRoles.do")
+	public @ResponseBody List<Role> findAllRoles(){
+		return roleService.findAllRoles();
+	}
+	
+	@RequestMapping("addUserRole.do")
+	public @ResponseBody String addUserRole(UserRole userRole) {
+		int i = roleService.addUserRole(userRole);
+		if(i>0) {
+			return "ok";
+		} else {
+			return "fail";
+		}
 	}
 }

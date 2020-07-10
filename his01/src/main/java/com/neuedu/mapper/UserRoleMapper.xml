@@ -21,10 +21,8 @@
     where userroleid = #{userroleid,jdbcType=INTEGER}
   </delete>
   <insert id="insert" parameterType="com.neuedu.pojo.UserRole" >
-    insert into user_role (userroleid, userid, roleid, 
-      delmark)
-    values (#{userroleid,jdbcType=INTEGER}, #{userid,jdbcType=INTEGER}, #{roleid,jdbcType=INTEGER}, 
-      #{delmark,jdbcType=INTEGER})
+    insert into user_role ( userid, roleid )
+    values ( #{userid,jdbcType=INTEGER}, #{roleid,jdbcType=INTEGER} )
   </insert>
   <insert id="insertSelective" parameterType="com.neuedu.pojo.UserRole" >
     insert into user_role

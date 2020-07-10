@@ -14,6 +14,8 @@
 	src="${pageContext.request.contextPath}/bootstrap/js/bootstrap.min.js"></script>
 <link rel="stylesheet"
 	href="${pageContext.request.contextPath}/css/common.css">
+<script type="text/javascript"
+	src="${pageContext.request.contextPath}/user/js/list.js"></script>	
 </head>
 <body>
 <div class="dataContainer">
@@ -65,7 +67,7 @@
 						&nbsp;&nbsp;&nbsp; <a href="">删除</a>
 						 &nbsp;&nbsp;&nbsp;
 						 <c:if test="${empty u.rolename}">
-						 	<a href="">设置角色</a>
+						 	<a href="javascript:fsetRoleview('${u.username}',${u.userid })">设置角色</a>
 						 </c:if>
 						 <c:if test="${ not empty u.rolename}">
 						 	<a href="">修改角色</a>
@@ -86,5 +88,38 @@
 
 	</div>
 
+
+ <!-- 设置角色模态框 begin -->
+    <div class="modal fade" id="setRoleModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+	  <div class="modal-dialog" role="document">
+	    <div class="modal-content">
+	      <div class="modal-header">
+	        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+	        <h4 class="modal-title" id="myModalLabel">设置角色</h4>
+	      </div>
+	      <div class="modal-body">
+	        <h5>当前用户名称：<span id="modal_username" style="color:blue;"></span>
+	         </h5>
+	        <input type="hidden" id="userid" >
+	        <table class="table table-bordered">
+	        	<tbody id="role_data">
+	        		
+	        	</tbody>
+	        </table>
+        	 
+	        
+	      </div>
+	       <div class="modal-footer">
+	       
+	        <button type="button" class="btn btn-info" onclick="fsaveUserRole()">设置</button>
+	         <button type="button" class="btn btn-success" data-dismiss="modal">取消</button>
+	      </div>
+	    </div>
+	  </div>
+	</div>
+    
+    
+    <!-- 设置角色模态框 end-->
+    
 </body>
 </html>

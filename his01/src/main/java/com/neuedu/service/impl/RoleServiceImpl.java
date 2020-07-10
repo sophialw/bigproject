@@ -6,7 +6,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.neuedu.mapper.RoleMapper;
+import com.neuedu.mapper.UserRoleMapper;
 import com.neuedu.pojo.Role;
+import com.neuedu.pojo.UserRole;
 import com.neuedu.service.RoleService;
 
 @Service("roleService")
@@ -14,6 +16,9 @@ public class RoleServiceImpl implements RoleService {
 
 	@Autowired
 	private RoleMapper roleMapper;
+	
+	@Autowired
+	private UserRoleMapper userRoleMapper;
 	@Override
 	public List<Role> findRoles(Role role) {
 		
@@ -23,6 +28,16 @@ public class RoleServiceImpl implements RoleService {
 	public int findCount(Role role) {
 		// TODO Auto-generated method stub
 		return roleMapper.findCountRoles(role);
+	}
+	@Override
+	public List<Role> findAllRoles() {
+		
+		return roleMapper.findAllRoles();
+	}
+	@Override
+	public int addUserRole(UserRole userRole) {
+		// TODO Auto-generated method stub
+		return userRoleMapper.insert(userRole);
 	}
 
 }

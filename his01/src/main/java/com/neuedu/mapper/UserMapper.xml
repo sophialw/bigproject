@@ -157,7 +157,7 @@
   
   
   <select id="findUsers" parameterType="com.neuedu.pojo.User" resultType="com.neuedu.pojo.User">
-  	select username,realname,departmentid,
+  	select username,realname,departmentid,userid,
 	(select constantname from constantitem c where c.constrantitemid = u.usertype) yhlx,
 	(select deptname from department d where d.departmentid = u.departmentid) deptname,
 	(select constantname from constantitem c where c.constrantitemid = u.doctitleid) yszc,
