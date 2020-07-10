@@ -45,6 +45,7 @@
 					<th>所在科室</th>
 					<th>职称</th>
 					<th>是否排班</th>
+					<th>当前角色</th>
 					<th>操作</th>
 				</tr>
 
@@ -59,9 +60,17 @@
 						<td>${u.deptname}</td>
 						<td>${u.yszc}</td>
 						<td>${u.isscheduling == 1?"是":"否"}</td>
-						<td><a href="">修改</a> &nbsp;&nbsp;&nbsp; <a href="">删除</a>
-						 &nbsp;&nbsp;&nbsp; <a href="">查看角色</a>
-						 &nbsp;&nbsp;&nbsp; <a href="">设置角色</a>
+						<td>${empty u.rolename ?"暂未设置":u.rolename}</td>
+						<td><a href="">修改</a> 
+						&nbsp;&nbsp;&nbsp; <a href="">删除</a>
+						 &nbsp;&nbsp;&nbsp;
+						 <c:if test="${empty u.rolename}">
+						 	<a href="">设置角色</a>
+						 </c:if>
+						 <c:if test="${ not empty u.rolename}">
+						 	<a href="">修改角色</a>
+						 </c:if>
+						 
 						 </td>
 					</tr>
 

@@ -161,6 +161,7 @@
 	(select constantname from constantitem c where c.constrantitemid = u.usertype) yhlx,
 	(select deptname from department d where d.departmentid = u.departmentid) deptname,
 	(select constantname from constantitem c where c.constrantitemid = u.doctitleid) yszc,
+	(select r.rolename from trole r, user_role ur where r.roleid = ur.roleid and ur.userid= u.userid) rolename,
 	u.isscheduling
 	from user u
 	<where>

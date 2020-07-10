@@ -29,13 +29,23 @@ public class User {
     
     private String deptname; //科室名称
     
+    private String rolename; //当前角色
+    
     private Integer beginIndex;
     
     private Integer pageSize;
     
     
 
-    public Integer getBeginIndex() {
+    public String getRolename() {
+		return rolename;
+	}
+
+	public void setRolename(String rolename) {
+		this.rolename = rolename;
+	}
+
+	public Integer getBeginIndex() {
 		return beginIndex;
 	}
 
